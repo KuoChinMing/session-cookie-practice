@@ -1,0 +1,14 @@
+extends ./layout
+block content
+  h1 #{title}
+  h2 welcome, 
+    span #{member}
+  if logstatus
+    p login times:
+      span #{logtimes}
+  if logstatus
+    a(href="/sessionLogout") logout
+  else
+    a(href="/sessionLogin") login
+  h1
+  
