@@ -27,7 +27,7 @@ app.set("views", "views");
 app.use(cookieParser("cookiecookie"));
 app.use(
   session({
-    secret: "recommand 128 bytes random string...",
+    secret: "werwer",
     store: new MongoStore({ url: "mongodb://127.0.0.1:27017/sessionDB" }),
     cookie: { maxAge: 600 * 1000 },
     resave: false,

@@ -8,7 +8,7 @@ home.get("/", (req, res) => {
   if (req.session.firstName && req.session.lastName) {
     name = req.session.firstName + " " + req.session.lastName;
     isLogin = true;
-    logTimes = req.session.times;
+    logTimes = req.session.times++;
     console.log(req.session);
   }
   res.render("sessionHome", {
@@ -27,7 +27,6 @@ home.post("/", (req, res) => {
     req.body.lastName === req.session.lastName
   ) {
     //如果輸入的,在session store已有儲存..
-    console.log(req);
     req.session.times++; //同一連線的登入次數, 就加 1
     return res.redirect("/sessionHome"); //就直接導向到...
   } else {
